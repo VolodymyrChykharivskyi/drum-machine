@@ -1,8 +1,0 @@
-<div class="stave">
-  <div class="staveName">{{ name }}</div>
-  <app-note
-    *ngFor="let note of notes"
-    (click)="onClick(note)"
-    [active]="note.active"
-  ></app-note>
-</div>

@@ -1,11 +1,4 @@
-<div class="machine">
-  <app-staves></app-staves>
-  <app-transport [pos]="transportPos"></app-transport>
-  <app-controls
-    [bpm]="bpm"
-    [playing]="playing"
-    (togglePlay)="togglePlay()"
-    (clearPattern)="clearPattern()"
-    (updateBpm)="updateBpm($event)"
-  ></app-controls>
+<theme></theme>
+<div class="container">
+  <dram-machine></dram-machine>
 </div>

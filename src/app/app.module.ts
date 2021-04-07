@@ -1,28 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+/** Modules */
+import { DrumMachineModule } from './modules/drum-machine/drum-machine.module';
+
+/** Components */
 import { AppComponent } from './app.component';
-import { StavesComponent } from './components/staves/staves.component';
-import { NoteComponent } from './components/note/note.component';
-import { StaveComponent } from './components/stave/stave.component';
-import { TransportComponent } from './components/transport/transport.component';
-import { TransportBlankComponent } from './components/transport-blank/transport-blank.component';
-import { ControlsComponent } from './components/controls/controls.component';
+import { CoreModule } from './modules/core/core.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    StavesComponent,
-    NoteComponent,
-    StaveComponent,
-    TransportComponent,
-    TransportBlankComponent,
-    ControlsComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    DrumMachineModule,
+    CoreModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

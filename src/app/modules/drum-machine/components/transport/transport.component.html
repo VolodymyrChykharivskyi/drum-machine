@@ -1,0 +1,12 @@
+<div class="transportContainer">
+  <transport-blank
+    *ngFor="let position of DrumMachineConfig.countPosition | array"
+  ></transport-blank>
+
+  <div class="transport">
+    <div
+      class="transportLight transportLightActive"
+      [ngStyle]="{ left: position * 85 + 'px' }"
+    ></div>
+  </div>
+</div>
