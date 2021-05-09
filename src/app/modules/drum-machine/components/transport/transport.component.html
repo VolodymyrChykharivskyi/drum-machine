@@ -1,6 +1,7 @@
 <div class="transportContainer">
   <transport-blank
     *ngFor="let position of DrumMachineConfig.countPosition | array"
+    [ngClass]="{'active': position === 1 }"
   ></transport-blank>
 
   <div class="transport">

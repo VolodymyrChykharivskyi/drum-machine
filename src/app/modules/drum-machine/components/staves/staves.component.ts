@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 /** Services */
 import { StavesService } from '../../services/staves.service';
@@ -19,5 +20,9 @@ export class StavesComponent implements OnInit {
 
   private getStaves(): void {
     this.staves = this.StavesService.getStaves();
+  }
+
+  public drop(event: CdkDragDrop<string[]>): void {
+    moveItemInArray(this.staves, event.previousIndex, event.currentIndex);
   }
 }

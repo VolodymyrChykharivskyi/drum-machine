@@ -1,7 +1,7 @@
 <div class="themes" (change)="changeTheme($event)">
   <label
     ><input
-      type="radio"
+      type="checkbox"
       name="theme"
       [value]="Theme.light"
       [checked]="checkedValue === Theme.light"
@@ -9,7 +9,7 @@
   >
   <label
     ><input
-      type="radio"
+      type="checkbox"
       name="theme"
       [value]="Theme.dark"
       [checked]="checkedValue === Theme.dark"

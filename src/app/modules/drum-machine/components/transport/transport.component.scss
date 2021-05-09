@@ -1,113 +1,10 @@
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  background: rgba(247,247,247,1);
-  background: -moz-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%, rgba(246,246,246,1) 47%, rgba(180,180,180,1) 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(247,247,247,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(180,180,180,1)));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%, rgba(246,246,246,1) 47%, rgba(180,180,180,1) 100%);
-  background: -o-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%, rgba(246,246,246,1) 47%, rgba(180,180,180,1) 100%);
-  background: -ms-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%, rgba(246,246,246,1) 47%, rgba(180,180,180,1) 100%);
-  background: radial-gradient(ellipse at center, rgba(247,247,247,1) 0%, rgba(246,246,246,1) 47%, rgba(180,180,180,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
-  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-
-h1 {
-  text-align: center;
-  font-weight: normal;
-}
-
-aside {
-  width: 190px;
-  background: rgba(255, 255, 255, 0.5);
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0 0 0 15px;
-  font-size: 16px;
-}
-
-aside a {
-  color: black;
-  text-decoration: none;
-}
-
-aside .content {
-  margin-top: 130px;
-}
-
-aside .left {
-  width: 30px;
-  float: left;
-  margin-right: 10px;
-  clear: left;
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-aside .right {
-  width: 150px;
-  float: left;
-}
-
-aside .right a:hover {
-  text-decoration: underline;
-}
-
-main {
-  margin: 40px auto;
-}
-
-.machine {
-  margin: 0 auto;
-  width: 910px;
-  position: relative;
-}
-
-#staves {
-  border-left: 20px solid #232323;
-  border-right: 20px solid #232323;
-  border-radius: 3px;
-}
-
-.stave {
-  width: 100%;
-  height: 70px;
-  border: 1px solid #666;
-  background: #333;
-}
-
-.staveName {
-  font-family: "Abel", sans-serif;
-  float: right;
-  color: white;
-  margin: 20px 10px 0 0;
-  background: #111;
-  width: 80px;
-  padding: 3px 8px 3px 8px;
-  border-left: 2px solid #222222;
-  border-right: 2px solid #454545;
-  border-top: 2px solid #212121;
-  border-bottom: 2px solid #565656;
-}
-
-.noteContainer {
-  width: 95px;
-  height: 70px;
-  background: none;
-  float: left;
-}
-
 .transportContainer {
   width: 100%;
   height: 40px;
   padding-top: 10px;
   border: 1px solid #666;
   background: #333;
+  box-sizing: border-box;
 }
 
 .transport {
@@ -151,10 +48,4 @@ main {
 .transportLightActive:after {
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 4px 4px 6px 7px rgba(0, 255, 0, 1);
-}
-
-.transportOff {
-  &.active {
-    background: yellow;
-  }
 }
