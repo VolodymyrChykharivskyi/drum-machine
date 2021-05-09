@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 /** Services */
-import { StavesService } from '../../services/staves.service';
+import { StavesService } from '../../services';
 
 /** Interfaces */
 import { Stave } from '../../interfaces/stave.interface';

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 /** Services */
-import { StavesService } from './services/staves.service';
+import { StavesService } from './services';
 
 /** Modules */
 import { CoreModule } from '../core/core.module';

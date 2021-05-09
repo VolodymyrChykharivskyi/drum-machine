@@ -5,8 +5,8 @@ import { Howl } from 'howler';
 import { DrumMachineConfig } from '../../configs/drum-machine.config';
 
 /** Services */
-import { StavesService } from '../../services/staves.service';
-import { LocalStorageService } from 'src/app/modules/core/services/local-storage.service';
+import { StavesService } from '../../services';
+import { LocalStorageService } from 'src/app/modules/core/services';
 
 /** Interfaces */
 import { Stave } from '../../interfaces/stave.interface';
@@ -20,7 +20,7 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
   public activePosition = 0;
   public playing = false;
   public bpm = DrumMachineConfig.bpmValue.initial;
-  private timerId: any;
+  private timerId: number;
   private staves: Stave[];
 
   constructor(

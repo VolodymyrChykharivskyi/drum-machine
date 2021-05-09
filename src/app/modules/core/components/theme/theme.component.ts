@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
-import { LocalStorageService } from '../../services/local-storage.service';
+import { LocalStorageService } from '../../services';
 
 /** Enums */
 import { Theme } from '../../enums/theme.enum';
