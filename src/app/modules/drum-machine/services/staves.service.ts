@@ -3,17 +3,21 @@ import { Injectable } from '@angular/core';
 /** Configs */
 import { DrumMachineConfig } from '../configs/drum-machine.config';
 
+/** Interfaces */
+import { Note } from '../interfaces/note.interface';
+import { Stave } from '../interfaces/stave.interface';
+
 @Injectable()
 export class StavesService {
-  private staves = [];
+  private staves: Stave[] = [];
 
-  public getStaves(): any {
+  public getStaves(): Stave[] {
     return this.staves;
   }
 
   public initStaves(): void {
     this.staves = DrumMachineConfig.soundsName.map(
-      (item: string, index: number) => ({
+      (item: string, index: number): Stave => ({
         id: index,
         name: item,
         sample: `${DrumMachineConfig.audioPath}${item}.mp3`,
@@ -22,10 +26,10 @@ export class StavesService {
     );
   }
 
-  private generateNotes(): any {
-    const notes = [];
+  private generateNotes(): Note[] {
+    const notes: Note[] = [];
 
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < DrumMachineConfig.countPosition; i++) {
       notes.push({ pos: i, active: false });
     }
 

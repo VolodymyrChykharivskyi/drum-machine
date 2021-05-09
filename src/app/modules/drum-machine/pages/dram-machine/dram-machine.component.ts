@@ -8,6 +8,9 @@ import { DrumMachineConfig } from '../../configs/drum-machine.config';
 import { StavesService } from '../../services/staves.service';
 import { LocalStorageService } from 'src/app/modules/core/services/local-storage.service';
 
+/** Interfaces */
+import { Stave } from '../../interfaces/stave.interface';
+
 @Component({
   selector: 'dram-machine',
   templateUrl: './dram-machine.component.html',
@@ -18,16 +21,21 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
   public playing = false;
   public bpm = DrumMachineConfig.bpmValue.initial;
   private timerId: any;
-  private staves: any;
+  private staves: Stave[];
 
-  constructor(private StavesService: StavesService, private LocalStorageService: LocalStorageService) {}
+  constructor(
+    private StavesService: StavesService,
+    private LocalStorageService: LocalStorageService
+  ) {}
 
   public ngOnInit(): void {
     this.StavesService.initStaves();
     this.setStaves();
 
     for (const stave of this.staves) {
-      const localStorageRef = this.LocalStorageService.getItem(`ag-pattern-${stave.id}`);
+      const localStorageRef = this.LocalStorageService.getItem(
+        `ag-pattern-${stave.id}`
+      );
 
       if (localStorageRef) {
         stave.notes = JSON.parse(localStorageRef);
@@ -37,7 +45,10 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 
   public ngAfterContentChecked(): void {
     for (const stave of this.staves) {
-      this.LocalStorageService.setItem(`ag-pattern-${stave.id}`, JSON.stringify(stave.notes));
+      this.LocalStorageService.setItem(
+        `ag-pattern-${stave.id}`,
+        JSON.stringify(stave.notes)
+      );
     }
   }
 
@@ -54,7 +65,7 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 
   public tick(): void {
     this.activePosition++;
-    if (this.activePosition > 7) {
+    if (this.activePosition === DrumMachineConfig.countPosition) {
       this.activePosition = 0;
     }
 
@@ -87,6 +98,7 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 
     if (this.playing) {
       this.setTimer();
+
       return;
     }
 
@@ -106,6 +118,7 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 
     if (this.playing) {
       clearInterval(this.timerId);
+
       this.setTimer();
     }
   }

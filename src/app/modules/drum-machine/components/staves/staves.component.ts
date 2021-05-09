@@ -4,13 +4,16 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 /** Services */
 import { StavesService } from '../../services/staves.service';
 
+/** Interfaces */
+import { Stave } from '../../interfaces/stave.interface';
+
 @Component({
   selector: 'staves',
   templateUrl: './staves.component.html',
   styleUrls: ['./staves.component.scss'],
 })
 export class StavesComponent implements OnInit {
-  public staves: any[];
+  public staves: Stave[];
 
   constructor(private StavesService: StavesService) {}
 

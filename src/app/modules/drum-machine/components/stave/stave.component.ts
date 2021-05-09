@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 
+/** Interfaces */
+import { Note } from '../../interfaces/note.interface';
+
 @Component({
   selector: 'stave',
   templateUrl: './stave.component.html',
@@ -7,9 +10,9 @@ import { Component, Input } from '@angular/core';
 })
 export class StaveComponent {
   @Input() name: string;
-  @Input() notes: any[];
+  @Input() notes: Note[];
 
-  public onClick(note): void {
+  public onClick(note: Note): void {
     note.active = !note.active;
   }
 }
