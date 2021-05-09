@@ -6,6 +6,7 @@ import { DrumMachineConfig } from '../../configs/drum-machine.config';
 
 /** Services */
 import { StavesService } from '../../services/staves.service';
+import { LocalStorageService } from 'src/app/modules/core/services/local-storage.service';
 
 @Component({
   selector: 'dram-machine',
@@ -19,14 +20,14 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
   private timerId: any;
   private staves: any;
 
-  constructor(private StavesService: StavesService) {}
+  constructor(private StavesService: StavesService, private LocalStorageService: LocalStorageService) {}
 
   public ngOnInit(): void {
     this.StavesService.initStaves();
     this.setStaves();
 
     for (const stave of this.staves) {
-      const localStorageRef = localStorage.getItem('ag-pattern-' + stave.id);
+      const localStorageRef = this.LocalStorageService.getItem(`ag-pattern-${stave.id}`);
 
       if (localStorageRef) {
         stave.notes = JSON.parse(localStorageRef);
@@ -36,10 +37,7 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 
   public ngAfterContentChecked(): void {
     for (const stave of this.staves) {
-      localStorage.setItem(
-        'ag-pattern-' + stave.id,
-        JSON.stringify(stave.notes)
-      );
+      this.LocalStorageService.setItem(`ag-pattern-${stave.id}`, JSON.stringify(stave.notes));
     }
   }
 

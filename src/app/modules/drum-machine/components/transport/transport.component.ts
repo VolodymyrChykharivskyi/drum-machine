@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 
+/** Configs */
 import { DrumMachineConfig } from '../../configs/drum-machine.config';
 
 @Component({
