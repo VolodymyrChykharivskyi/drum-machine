@@ -29,4 +29,12 @@ export class ControlsComponent {
   public changeBpm(bpm: number): void {
     this.updateBpm.emit(bpm);
   }
+
+  public getBtnText(): string {
+    return this.playing ? 'Stop' : 'Play';
+  }
+
+  public getIcon(): string {
+    return this.playing ? 'stop-fill' : 'play-fill';
+  }
 }

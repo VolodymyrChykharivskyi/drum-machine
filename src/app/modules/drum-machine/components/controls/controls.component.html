@@ -1,8 +1,15 @@
 <div class="controls">
-  <a href="#" class="button" (click)="toggle()">{{
-    playing ? "Stop" : "Play"
-  }}</a>
-  <a href="#" class="button" (click)="clear()">Clear</a>
+  <div class="buttons">
+    <btn
+      text="{{ getBtnText() }}"
+      icon="{{ getIcon() }}"
+      (click)="toggle()"
+    ></btn>
+    <btn
+      text="Clear"
+      (click)="clear()"
+    ></btn>
+  </div>
   <div class="bpmRange">
     <div class="bpmTitle">BPM</div>
     <input
