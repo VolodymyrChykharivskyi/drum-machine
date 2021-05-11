@@ -12,34 +12,34 @@ import { Stave } from '../../interfaces/stave.interface';
 
 @Injectable()
 export class StavesService {
-  private staves: Stave[] = [];
+	private staves: Stave[] = [];
 
-  public getStaves(): Stave[] {
-    return this.staves;
-  }
+	public getStaves(): Stave[] {
+		return this.staves;
+	}
 
-  public initStaves(): void {
-    this.staves = DrumMachineConfig.soundsName.map(
-      (item: string, index: number): Stave => ({
-        id: index,
-        name: this.transformName(item),
-        sample: `${DrumMachineConfig.audioPath}${item}.mp3`,
-        notes: this.generateNotes(),
-      })
-    );
-  }
+	public initStaves(): void {
+		this.staves = DrumMachineConfig.soundsName.map(
+			(item: string, index: number): Stave => ({
+				id: index,
+				name: this.transformName(item),
+				sample: `${DrumMachineConfig.audioPath}${item}.mp3`,
+				notes: this.generateNotes(),
+			})
+		);
+	}
 
-  private generateNotes(): Note[] {
-    const arrayPipe = new ArrayPipe();
-    const arr = arrayPipe.transform(DrumMachineConfig.countPosition);
+	private generateNotes(): Note[] {
+		const arrayPipe = new ArrayPipe();
+		const arr = arrayPipe.transform(DrumMachineConfig.countPosition);
 
-    return arr.map((value: number, idx: number) => ({
-      pos: idx,
-      active: false,
-    }));
-  }
+		return arr.map((value: number, idx: number) => ({
+			pos: idx,
+			active: false,
+		}));
+	}
 
-  private transformName(name: string): string {
-    return (name[0].toUpperCase() + name.slice(1)).split('_').join(' ');
-  }
+	private transformName(name: string): string {
+		return (name[0].toUpperCase() + name.slice(1)).split('_').join(' ');
+	}
 }

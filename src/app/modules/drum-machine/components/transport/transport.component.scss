@@ -1,50 +1,50 @@
 .transportContainer {
-  width: 100%;
-  height: 40px;
-  padding-top: 5px;
-  border: 1px solid #666;
-  background: #333;
-  box-sizing: border-box;
-}
+	width: 100%;
+	height: 40px;
+	padding-top: 5px;
+	border: 1px solid #666;
+	background: #333;
+	box-sizing: border-box;
 
-.transport {
-  width: 95px;
-  height: 50px;
-  text-align: center;
-  left: 0;
-  z-index: 1;
-  position: absolute;
-}
+	.transport {
+		width: 95px;
+		height: 50px;
+		text-align: center;
+		left: 0;
+		z-index: 1;
+		position: absolute;
 
-.transportLight {
-  border-radius: 50%;
-  background-color: #001100;
-  width: 25px;
-  height: 25px;
-  margin: 0 auto;
-  position: relative;
-  border: 3px solid #222;
-}
+		.transportLight {
+			border-radius: 50%;
+			background-color: #001100;
+			width: 25px;
+			height: 25px;
+			margin: 0 auto;
+			position: relative;
+			border: 3px solid #222;
 
-.transportLight:after {
-  content: "";
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.5);
-  top: 6px;
-  left: 6px;
-  box-shadow: 3px 4px 7px 8px rgba(0, 120, 0, 0.6);
-}
+			&:after {
+				content: '';
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				position: absolute;
+				background-color: rgba(255, 255, 255, 0.5);
+				top: 6px;
+				left: 6px;
+				box-shadow: 3px 4px 7px 8px rgba(0, 120, 0, 0.6);
+			}
+		}
 
-.transportLightActive {
-  background-color: #00aa00;
-  box-shadow: 0px 0px 10px 5px rgba(0, 255, 0, 0.4);
-  border: 3px solid rgba(0, 120, 0, 1);
-}
+		.transportLightActive {
+			background-color: #00aa00;
+			box-shadow: 0px 0px 10px 5px rgba(0, 255, 0, 0.4);
+			border: 3px solid rgba(0, 120, 0, 1);
 
-.transportLightActive:after {
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 4px 4px 6px 7px rgba(0, 255, 0, 1);
+			&:after {
+				background-color: rgba(255, 255, 255, 1);
+				box-shadow: 4px 4px 6px 7px rgba(0, 255, 0, 1);
+			}
+		}
+	}
 }

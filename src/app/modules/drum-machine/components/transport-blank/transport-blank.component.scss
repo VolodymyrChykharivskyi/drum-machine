@@ -1,27 +1,27 @@
 .transportOff {
-  width: 95px;
-  text-align: center;
-  float: left;
-}
+	width: 95px;
+	text-align: center;
+	float: left;
 
-.transportLight {
-  border-radius: 50%;
-  background-color: #001100;
-  width: 25px;
-  height: 25px;
-  margin: 0 auto;
-  position: relative;
-  border: 3px solid #222;
-}
+	.transportLight {
+		border-radius: 50%;
+		background-color: #001100;
+		width: 25px;
+		height: 25px;
+		margin: 0 auto;
+		position: relative;
+		border: 3px solid #222;
 
-.transportLight:after {
-  content: '';
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.5);
-  top: 6px;
-  left: 6px;
-  box-shadow: 3px 4px 7px 8px rgba(0, 120, 0, 0.6);
+		&:after {
+			content: '';
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			position: absolute;
+			background-color: rgba(255, 255, 255, 0.5);
+			top: 6px;
+			left: 6px;
+			box-shadow: 3px 4px 7px 8px rgba(0, 120, 0, 0.6);
+		}
+	}
 }

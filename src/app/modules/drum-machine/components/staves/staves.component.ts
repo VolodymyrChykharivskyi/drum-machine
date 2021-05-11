@@ -8,24 +8,24 @@ import { StavesService } from '../../services';
 import { Stave } from '../../interfaces/stave.interface';
 
 @Component({
-  selector: 'staves',
-  templateUrl: './staves.component.html',
-  styleUrls: ['./staves.component.scss'],
+	selector: 'staves',
+	templateUrl: './staves.component.html',
+	styleUrls: ['./staves.component.scss'],
 })
 export class StavesComponent implements OnInit {
-  public staves: Stave[];
+	public staves: Stave[];
 
-  constructor(private StavesService: StavesService) {}
+	constructor(private StavesService: StavesService) {}
 
-  public ngOnInit(): void {
-    this.getStaves();
-  }
+	public ngOnInit(): void {
+		this.getStaves();
+	}
 
-  private getStaves(): void {
-    this.staves = this.StavesService.getStaves();
-  }
+	private getStaves(): void {
+		this.staves = this.StavesService.getStaves();
+	}
 
-  public drop(event: CdkDragDrop<string[]>): void {
-    moveItemInArray(this.staves, event.previousIndex, event.currentIndex);
-  }
+	public drop(event: CdkDragDrop<string[]>): void {
+		moveItemInArray(this.staves, event.previousIndex, event.currentIndex);
+	}
 }

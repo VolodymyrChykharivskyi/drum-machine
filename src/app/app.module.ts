@@ -9,13 +9,9 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    DrumMachineModule,
-    CoreModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+	declarations: [AppComponent],
+	imports: [BrowserModule, DrumMachineModule, CoreModule],
+	providers: [],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,26 +1,23 @@
 <div class="controls">
-  <div class="buttons">
-    <btn
-      text="{{ getBtnText() }}"
-      icon="{{ getIcon() }}"
-      (click)="toggle()"
-    ></btn>
-    <btn
-      text="Clear"
-      (click)="clear()"
-    ></btn>
-  </div>
-  <div class="bpmRange">
-    <div class="bpmTitle">BPM</div>
-    <input
-      type="range"
-      id="bpm"
-      [min]="DrumMachineConfig.bpmValue.min"
-      [max]="DrumMachineConfig.bpmValue.max"
-      step="1"
-      [value]="bpm"
-      #ref
-      (change)="changeBpm(ref.value)"
-    /><output for="bpm" class="bpmOutput">{{ bpm }}</output>
-  </div>
+	<div>
+		<btn
+			text="{{ getBtnText() }}"
+			icon="{{ getIcon() }}"
+			(click)="toggle()"
+		></btn>
+		<btn text="Clear" (click)="clear()"></btn>
+	</div>
+	<div class="bpmRange">
+		<div class="bpmTitle">BPM</div>
+		<input
+			type="range"
+			id="bpm"
+			[min]="DrumMachineConfig.bpmValue.min"
+			[max]="DrumMachineConfig.bpmValue.max"
+			step="1"
+			[value]="bpm"
+			#ref
+			(change)="changeBpm(ref.value)"
+		/><output for="bpm" class="bpmOutput">{{ bpm }}</output>
+	</div>
 </div>

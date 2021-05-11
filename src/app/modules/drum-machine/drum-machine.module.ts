@@ -18,17 +18,17 @@ import { TransportBlankComponent } from './components/transport-blank/transport-
 import { ControlsComponent } from './components/controls/controls.component';
 
 @NgModule({
-  declarations: [
-    DramMachineComponent,
-    StavesComponent,
-    NoteComponent,
-    StaveComponent,
-    TransportComponent,
-    TransportBlankComponent,
-    ControlsComponent,
-  ],
-  imports: [BrowserModule, CoreModule, DragDropModule],
-  providers: [StavesService],
-  exports: [DramMachineComponent],
+	declarations: [
+		DramMachineComponent,
+		StavesComponent,
+		NoteComponent,
+		StaveComponent,
+		TransportComponent,
+		TransportBlankComponent,
+		ControlsComponent,
+	],
+	imports: [BrowserModule, CoreModule, DragDropModule],
+	providers: [StavesService],
+	exports: [DramMachineComponent],
 })
 export class DrumMachineModule {}

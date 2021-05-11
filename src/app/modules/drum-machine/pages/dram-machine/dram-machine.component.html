@@ -1,11 +1,11 @@
 <div class="machine">
-  <staves></staves>
-  <transport [position]="activePosition"></transport>
-  <controls
-    [bpm]="bpm"
-    [playing]="playing"
-    (togglePlay)="togglePlay()"
-    (clearPattern)="clearPattern()"
-    (updateBpm)="updateBpm($event)"
-  ></controls>
+	<staves></staves>
+	<transport [position]="activePosition"></transport>
+	<controls
+		[bpm]="bpm"
+		[playing]="playing"
+		(togglePlay)="togglePlay()"
+		(clearPattern)="clearPattern()"
+		(updateBpm)="updateBpm($event)"
+	></controls>
 </div>
