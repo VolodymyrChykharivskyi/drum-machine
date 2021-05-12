@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body.light {
-	--color-bg: white;
-	--color-text: black;
+    --color-bg: #f8f8ff;
+    --color-text: black;
 }
 
 body.dark {
@@ -14,4 +14,5 @@ body {
 	padding: 0;
 	background: var(--color-bg);
 	color: var(--color-text);
+	font-family: "Abel", sans-serif;
 }

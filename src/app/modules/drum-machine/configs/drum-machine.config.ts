@@ -9,6 +9,7 @@ export abstract class DrumMachineConfig {
 		'snare_light',
 	];
 
+	public static readonly localStorageName = 'drum-machine';
 	public static readonly countPosition = 8;
 	public static readonly audioPath = 'assets/audio/';
 	public static readonly bpmValue = {

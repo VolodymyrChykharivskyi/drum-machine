@@ -31,25 +31,13 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 	public ngOnInit(): void {
 		this.StavesService.initStaves();
 		this.setStaves();
-
-		for (const stave of this.staves) {
-			const localStorageRef = this.LocalStorageService.getItem(
-				`ag-pattern-${stave.id}`
-			);
-
-			if (localStorageRef) {
-				stave.notes = JSON.parse(localStorageRef);
-			}
-		}
 	}
 
 	public ngAfterContentChecked(): void {
-		for (const stave of this.staves) {
-			this.LocalStorageService.setItem(
-				`ag-pattern-${stave.id}`,
-				JSON.stringify(stave.notes)
-			);
-		}
+		this.LocalStorageService.setItem(
+			DrumMachineConfig.localStorageName,
+			JSON.stringify(this.staves)
+		);
 	}
 
 	public setStaves(): void {

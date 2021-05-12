@@ -6,6 +6,9 @@ import { ArrayPipe } from 'src/app/modules/core/pipes/array.pipe';
 /** Configs */
 import { DrumMachineConfig } from '../../configs/drum-machine.config';
 
+/** Services */
+import { LocalStorageService } from 'src/app/modules/core/services';
+
 /** Interfaces */
 import { Note } from '../../interfaces/note.interface';
 import { Stave } from '../../interfaces/stave.interface';
@@ -14,11 +17,22 @@ import { Stave } from '../../interfaces/stave.interface';
 export class StavesService {
 	private staves: Stave[] = [];
 
+	constructor(private LocalStorageService: LocalStorageService) {}
+
 	public getStaves(): Stave[] {
 		return this.staves;
 	}
 
 	public initStaves(): void {
+		const localStorageRef = this.LocalStorageService.getItem(DrumMachineConfig.localStorageName);
+
+		if (localStorageRef) {
+			this.staves = JSON.parse(localStorageRef);
+
+			return;
+		}
+
+		// Init when not in local storage
 		this.staves = DrumMachineConfig.soundsName.map(
 			(item: string, index: number): Stave => ({
 				id: index,
