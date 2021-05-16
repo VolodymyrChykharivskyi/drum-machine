@@ -5,7 +5,7 @@ import { Howl } from 'howler';
 import { DrumMachineConfig } from '../../configs/drum-machine.config';
 
 /** Services */
-import { StavesService } from '../../services';
+import { StavesService, DrumMachineService } from '../../services';
 import { LocalStorageService } from 'src/app/modules/core/services';
 
 /** Interfaces */
@@ -17,7 +17,6 @@ import { Stave } from '../../interfaces/stave.interface';
 	styleUrls: ['./dram-machine.component.scss'],
 })
 export class DramMachineComponent implements OnInit, AfterContentChecked {
-	public activePosition = 0;
 	public playing = false;
 	public bpm = DrumMachineConfig.bpmValue.initial;
 	private timerId: number;
@@ -25,12 +24,14 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 
 	constructor(
 		private StavesService: StavesService,
-		private LocalStorageService: LocalStorageService
+		private LocalStorageService: LocalStorageService,
+		private DrumMachineService: DrumMachineService
 	) {}
 
 	public ngOnInit(): void {
 		this.StavesService.initStaves();
-		this.setStaves();
+
+		this.staves = this.StavesService.getStaves();
 	}
 
 	public ngAfterContentChecked(): void {
@@ -38,10 +39,6 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 			DrumMachineConfig.localStorageName,
 			JSON.stringify(this.staves)
 		);
-	}
-
-	public setStaves(): void {
-		this.staves = this.StavesService.getStaves();
 	}
 
 	public setTimer(): void {
@@ -52,9 +49,12 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 	}
 
 	public tick(): void {
-		this.activePosition++;
-		if (this.activePosition === DrumMachineConfig.countPosition) {
-			this.activePosition = 0;
+		this.DrumMachineService.incrementActivePosition();
+
+		if (
+			this.DrumMachineService.activePosition === DrumMachineConfig.countPosition
+		) {
+			this.DrumMachineService.activePosition = 0;
 		}
 
 		this.checkNote();
@@ -63,7 +63,10 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 	public checkNote(): void {
 		for (const stave of this.staves) {
 			for (const note of stave.notes) {
-				if (note.active && note.pos === this.activePosition) {
+				if (
+					note.active &&
+					note.pos === this.DrumMachineService.activePosition
+				) {
 					this.playSample(stave.sample);
 				}
 			}

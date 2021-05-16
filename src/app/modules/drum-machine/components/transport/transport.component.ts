@@ -1,7 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 /** Configs */
 import { DrumMachineConfig } from '../../configs/drum-machine.config';
+
+import { DrumMachineService } from '../../services';
 
 @Component({
 	selector: 'transport',
@@ -9,7 +11,7 @@ import { DrumMachineConfig } from '../../configs/drum-machine.config';
 	styleUrls: ['./transport.component.scss'],
 })
 export class TransportComponent {
-	@Input() position: number;
-
 	public readonly DrumMachineConfig = DrumMachineConfig;
+
+	constructor(public DrumMachineService: DrumMachineService) {}
 }

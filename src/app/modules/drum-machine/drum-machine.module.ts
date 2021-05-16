@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 /** Services */
-import { StavesService } from './services';
+import { StavesService, DrumMachineService } from './services';
 
 /** Modules */
 import { CoreModule } from '../core/core.module';
@@ -28,7 +28,7 @@ import { ControlsComponent } from './components/controls/controls.component';
 		ControlsComponent,
 	],
 	imports: [BrowserModule, CoreModule, DragDropModule],
-	providers: [StavesService],
+	providers: [StavesService, DrumMachineService],
 	exports: [DramMachineComponent],
 })
 export class DrumMachineModule {}
