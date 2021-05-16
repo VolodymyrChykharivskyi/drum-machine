@@ -17,7 +17,6 @@ import { Stave } from '../../interfaces/stave.interface';
 	styleUrls: ['./dram-machine.component.scss'],
 })
 export class DramMachineComponent implements OnInit, AfterContentChecked {
-	public playing = false;
 	public bpm = DrumMachineConfig.bpmValue.initial;
 	private timerId: number;
 	private staves: Stave[];
@@ -85,9 +84,9 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 	}
 
 	public togglePlay(): void {
-		this.playing = !this.playing;
+		this.DrumMachineService.togglePlay();
 
-		if (this.playing) {
+		if (this.DrumMachineService.playing) {
 			this.setTimer();
 
 			return;
@@ -107,7 +106,7 @@ export class DramMachineComponent implements OnInit, AfterContentChecked {
 	public updateBpm(bpm: number): void {
 		this.bpm = bpm;
 
-		if (this.playing) {
+		if (this.DrumMachineService.playing) {
 			clearInterval(this.timerId);
 
 			this.setTimer();

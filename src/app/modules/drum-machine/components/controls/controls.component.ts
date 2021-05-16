@@ -3,6 +3,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 /** Configs */
 import { DrumMachineConfig } from '../../configs/drum-machine.config';
 
+/** Services */
+import { DrumMachineService } from '../../services';
+
 @Component({
 	selector: 'controls',
 	templateUrl: './controls.component.html',
@@ -10,13 +13,14 @@ import { DrumMachineConfig } from '../../configs/drum-machine.config';
 })
 export class ControlsComponent {
 	@Input() bpm: number;
-	@Input() playing: boolean;
 
 	@Output() togglePlay: EventEmitter<void> = new EventEmitter<void>();
 	@Output() clearPattern: EventEmitter<void> = new EventEmitter<void>();
 	@Output() updateBpm: EventEmitter<number> = new EventEmitter<number>();
 
 	public readonly DrumMachineConfig = DrumMachineConfig;
+
+	constructor(private DrumMachineService: DrumMachineService) {}
 
 	public toggle(): void {
 		this.togglePlay.emit();
@@ -31,10 +35,10 @@ export class ControlsComponent {
 	}
 
 	public getBtnText(): string {
-		return this.playing ? 'Stop' : 'Play';
+		return this.DrumMachineService.playing ? 'Stop' : 'Play';
 	}
 
 	public getIcon(): string {
-		return this.playing ? 'stop-fill' : 'play-fill';
+		return this.DrumMachineService.playing ? 'stop-fill' : 'play-fill';
 	}
 }
