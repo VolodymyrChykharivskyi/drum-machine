@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 /** Configs */
 import { DrumMachineConfig } from '../../configs/drum-machine.config';
@@ -12,26 +12,20 @@ import { DrumMachineService } from '../../services';
 	styleUrls: ['./controls.component.scss'],
 })
 export class ControlsComponent {
-	@Input() bpm: number;
-
-	@Output() togglePlay: EventEmitter<void> = new EventEmitter<void>();
-	@Output() clearPattern: EventEmitter<void> = new EventEmitter<void>();
-	@Output() updateBpm: EventEmitter<number> = new EventEmitter<number>();
-
 	public readonly DrumMachineConfig = DrumMachineConfig;
 
-	constructor(private DrumMachineService: DrumMachineService) {}
+	constructor(public DrumMachineService: DrumMachineService) {}
 
 	public toggle(): void {
-		this.togglePlay.emit();
+		this.DrumMachineService.togglePlay();
 	}
 
 	public clear(): void {
-		this.clearPattern.emit();
+		this.DrumMachineService.clearPattern();
 	}
 
 	public changeBpm(bpm: number): void {
-		this.updateBpm.emit(bpm);
+		this.DrumMachineService.updateBpm(bpm);
 	}
 
 	public getBtnText(): string {

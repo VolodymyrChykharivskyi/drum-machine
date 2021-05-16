@@ -15,10 +15,10 @@
 			[min]="DrumMachineConfig.bpmValue.min"
 			[max]="DrumMachineConfig.bpmValue.max"
 			step="1"
-			[value]="bpm"
+			[value]="DrumMachineService.bpm"
 			#ref
 			(change)="changeBpm(ref.value)"
 		/>
-		<output for="bpm" class="bpmOutput">{{ bpm }}</output>
+		<output for="bpm" class="bpmOutput">{{ DrumMachineService.bpm }}</output>
 	</div>
 </div>
