@@ -53,6 +53,10 @@ export class StavesService {
 		}));
 	}
 
+	/**
+	 * @desc Transform name
+	 * @example 'hi_hat_closed' => 'Hi hat closed'
+	 */
 	private transformName(name: string): string {
 		return (name[0].toUpperCase() + name.slice(1)).split('_').join(' ');
 	}

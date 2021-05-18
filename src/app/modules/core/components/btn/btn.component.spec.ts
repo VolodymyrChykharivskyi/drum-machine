@@ -15,7 +15,6 @@ describe('BtnComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(BtnComponent);
 		component = fixture.componentInstance;
-		fixture.detectChanges();
 	});
 
 	it('should create', () => {

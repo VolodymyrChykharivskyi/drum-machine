@@ -5,8 +5,8 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { DrumMachineConfig } from '../../configs/drum-machine.config';
 
 /** Services */
-import { StavesService } from '../../services';
 import { LocalStorageService } from 'src/app/modules/core/services';
+import { StavesService } from '../../services';
 
 /** Interfaces */
 import { Stave } from '../../interfaces/stave.interface';

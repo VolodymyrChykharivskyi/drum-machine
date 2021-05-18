@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 /** Configs */
 import { DrumMachineConfig } from '../../configs/drum-machine.config';
 
+/** Services */
 import { DrumMachineService } from '../../services';
 
 @Component({

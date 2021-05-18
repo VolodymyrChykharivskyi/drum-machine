@@ -4,8 +4,8 @@ import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { DrumMachineConfig } from '../../configs/drum-machine.config';
 
 /** Services */
-import { StavesService, DrumMachineService } from '../../services';
 import { LocalStorageService } from 'src/app/modules/core/services';
+import { StavesService, DrumMachineService } from '../../services';
 
 @Component({
 	selector: 'dram-machine',
