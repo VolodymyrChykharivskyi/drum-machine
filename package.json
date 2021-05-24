@@ -22,6 +22,7 @@
 		"@angular/router": "~11.2.8",
 		"@ngx-translate/core": "^13.0.0",
 		"@ngx-translate/http-loader": "^6.0.0",
+		"angular-cli-ghpages": "^1.0.0-rc.1",
 		"angular-remix-icon": "^1.1.0",
 		"howler": "^2.2.1",
 		"rxjs": "~6.6.0",
