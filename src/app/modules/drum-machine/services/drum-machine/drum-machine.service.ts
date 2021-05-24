@@ -38,14 +38,14 @@ export class DrumMachineService {
 		this.activePosition = this.activePosition + num;
 	}
 
-	private setTimer(): void {
+	public setTimer(): void {
 		this.timerId = setInterval(
 			() => this.tick(),
 			this.calculateTempo(this.bpm)
 		);
 	}
 
-	private calculateTempo(bpm: number): number {
+	public calculateTempo(bpm: number): number {
 		return 60000 / bpm;
 	}
 
@@ -106,7 +106,7 @@ export class DrumMachineService {
 		}
 	}
 
-	private togglePlayValue(): void {
+	public togglePlayValue(): void {
 		this.playing = !this.playing;
 	}
 }
