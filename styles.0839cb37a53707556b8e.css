@@ -1,0 +1,1 @@
+body.light{--color-bg:#de9b89;--color-text:#000}body.dark{--color-bg:#000;--color-text:#fff}body{margin:0;padding:0;background:var(--color-bg);color:var(--color-text);font-family:Abel,sans-serif}
