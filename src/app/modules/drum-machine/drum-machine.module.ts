@@ -7,6 +7,7 @@ import { StavesService, DrumMachineService } from './services';
 
 /** Modules */
 import { CoreModule } from '../core/core.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 /** Components */
 import { DramMachineComponent } from './pages/dram-machine/dram-machine.component';
@@ -27,7 +28,7 @@ import { ControlsComponent } from './components/controls/controls.component';
 		TransportBlankComponent,
 		ControlsComponent,
 	],
-	imports: [BrowserModule, CoreModule, DragDropModule],
+	imports: [BrowserModule, CoreModule, DragDropModule, TranslateModule],
 	providers: [StavesService, DrumMachineService],
 	exports: [DramMachineComponent],
 })

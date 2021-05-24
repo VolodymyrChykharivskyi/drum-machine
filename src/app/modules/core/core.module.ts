@@ -5,6 +5,7 @@ import { LocalStorageService } from './services';
 
 /** Modules */
 import { IconsModule } from './modules/icons/icons.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 /** Pipes */
 import { ArrayPipe } from './pipes/array.pipe';
@@ -15,7 +16,7 @@ import { BtnComponent } from './components/btn/btn.component';
 
 @NgModule({
 	declarations: [ArrayPipe, ThemeComponent, BtnComponent],
-	imports: [IconsModule],
+	imports: [IconsModule, TranslateModule],
 	providers: [LocalStorageService],
 	exports: [IconsModule, ArrayPipe, ThemeComponent, BtnComponent],
 })

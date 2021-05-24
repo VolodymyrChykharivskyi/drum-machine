@@ -5,6 +5,7 @@ import { DrumMachineConfig } from '../../configs/drum-machine.config';
 
 /** Services */
 import { DrumMachineService } from '../../services';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'controls',
@@ -14,7 +15,7 @@ import { DrumMachineService } from '../../services';
 export class ControlsComponent {
 	public readonly DrumMachineConfig = DrumMachineConfig;
 
-	constructor(public DrumMachineService: DrumMachineService) {}
+	constructor(public DrumMachineService: DrumMachineService, private translate: TranslateService) {}
 
 	public toggle(): void {
 		this.DrumMachineService.togglePlay();
@@ -29,7 +30,7 @@ export class ControlsComponent {
 	}
 
 	public getBtnText(): string {
-		return this.DrumMachineService.playing ? 'Stop' : 'Play';
+		return this.DrumMachineService.playing ? this.translate.instant('stop') : this.translate.instant('play');
 	}
 
 	public getIcon(): string {
