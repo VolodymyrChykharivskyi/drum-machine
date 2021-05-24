@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { DrumMachineService, StavesService } from '../../services';
+import { LocalStorageService } from '../../../core/services';
+
 import { DramMachineComponent } from './dram-machine.component';
 
 describe('DramMachineComponent', () => {
@@ -8,6 +11,11 @@ describe('DramMachineComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
+			providers: [
+				{ provide: DrumMachineService, useValue: DrumMachineService },
+				{ provide: LocalStorageService, useValue: LocalStorageService },
+				{ provide: StavesService, useValue: StavesService },
+			],
 			declarations: [DramMachineComponent],
 		}).compileComponents();
 	});
@@ -15,7 +23,6 @@ describe('DramMachineComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(DramMachineComponent);
 		component = fixture.componentInstance;
-		fixture.detectChanges();
 	});
 
 	it('should create', () => {

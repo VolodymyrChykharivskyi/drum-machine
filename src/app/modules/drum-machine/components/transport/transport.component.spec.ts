@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { DrumMachineService } from '../../services';
+
 import { TransportComponent } from './transport.component';
+
+import { ArrayPipe } from '../../../core/pipes/array.pipe';
 
 describe('TransportComponent', () => {
 	let component: TransportComponent;
@@ -8,7 +12,10 @@ describe('TransportComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [TransportComponent],
+			providers: [
+				{ provide: DrumMachineService, useValue: DrumMachineService },
+			],
+			declarations: [TransportComponent, ArrayPipe],
 		}).compileComponents();
 	});
 
