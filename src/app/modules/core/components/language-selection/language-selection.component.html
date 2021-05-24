@@ -1,0 +1,12 @@
+<div class="language-selection">
+	<select #langSelect (change)="translate.use(langSelect.value)">
+		<option
+			*ngFor="let lang of translate.getLangs()"
+			[value]="lang"
+			[selected]="lang === translate.currentLang"
+			class="options"
+		>
+			{{ "languages." + lang | translate }} <img src="https://www.countryflags.io/be/flat/64.png">
+		</option>
+	</select>
+</div>

@@ -1,15 +1,7 @@
-<theme></theme>
+<div class="header">
+	<theme></theme>
+	<language-selection></language-selection>
+</div>
 <div class="container">
 	<dram-machine></dram-machine>
-</div>
-<div>
-	<select #langSelect (change)="translate.use(langSelect.value)">
-		<option
-			*ngFor="let lang of translate.getLangs()"
-			[value]="lang"
-			[selected]="lang === translate.currentLang"
-		>
-			{{ lang }}
-		</option>
-	</select>
 </div>

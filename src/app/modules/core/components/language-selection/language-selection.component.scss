@@ -1,0 +1,15 @@
+.language-selection {
+	> select {
+		height: 32px;
+		width: 105px;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		border-bottom: 2px solid var(--color-text);
+		color: var(--color-text);
+
+		.options {
+			height: 35px;
+		}
+	}
+}
