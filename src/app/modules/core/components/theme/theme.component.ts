@@ -29,7 +29,11 @@ export class ThemeComponent implements OnInit {
 		if (theme) {
 			this.renderer.addClass(this.document.body, theme);
 			this.checkedValue = Theme[theme];
+			return;
 		}
+
+		this.renderer.addClass(this.document.body, Theme.light);
+		this.LocalStorageService.setItem('theme', Theme.light);
 	}
 
 	public changeTheme(event): void {
